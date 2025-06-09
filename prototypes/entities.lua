@@ -54,28 +54,48 @@ function create_mining_drill_variant(params)
 end
 
 -- Tints
-local yellow_tint = { r = 1, g = 1, b = 0, a = 0.7 }   -- Yellow tint for MK2 drill
-local red_tint = { r = 1, g = 0.2, b = 0.2, a = 0.7 }  -- Red tint for MK3 drill
+local mk2_tint = { r = 1.0, g = 0.84, b = 0.0, a = 0.9 }  -- Gold-yellow (stronger, richer)
+local mk3_tint = { r = 1.0, g = 0.25, b = 0.25, a = 0.9 } -- Crimson red (aggressive, power)
+local mk4_tint = { r = 0.4, g = 0.6, b = 1.0, a = 0.9 }   -- Tech blue (cool, high-tech)
+local mk5_tint = { r = 0.3, g = 1.0, b = 0.5, a = 0.9 }   -- Emerald green (vibrant, eco-friendly)
 
--- MK2 drill
+-- MK2 drill entity
 local electricMiningDrillMK2 = create_mining_drill_variant{
     name = "electric-mining-drill-mk2",
-    tint = yellow_tint,
+    tint = mk2_tint,
     mining_speed = 1.0,
     energy_usage = "120kW",
 }
 
--- MK3 drill
+-- MK3 drill entity
 local electricMiningDrillMK3 = create_mining_drill_variant{
     name = "electric-mining-drill-mk3",
-    tint = red_tint,
-    mining_speed = 2.0,
+    tint = mk3_tint,
+    mining_speed = 1.75,
     energy_usage = "180kW",
+}
+
+-- MK4 drill entity
+local electricMiningDrillMK4 = create_mining_drill_variant{
+    name = "electric-mining-drill-mk4",
+    tint = mk4_tint,
+    mining_speed = 2.5,
+    energy_usage = "240kW",
+}
+
+-- MK5 drill entity
+local electricMiningDrillMK5 = create_mining_drill_variant{
+    name = "electric-mining-drill-mk5",
+    tint = mk5_tint,
+    mining_speed = 3.5,
+    energy_usage = "360kW",
 }
 
 local drill_entities = {
     electricMiningDrillMK2,
     electricMiningDrillMK3,
+    electricMiningDrillMK4,
+    electricMiningDrillMK5,
 }
 
 data:extend(drill_entities)

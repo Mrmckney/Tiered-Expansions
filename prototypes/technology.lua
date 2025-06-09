@@ -7,7 +7,7 @@ function create_mining_drill_technology(mk)
         type = "technology",
         name = "electric-mining-drill-mk" .. mk,
         icon = "__base__/graphics/technology/electric-mining-drill.png",
-        icon_size = 144,
+        icon_size = 256,
         effects = {
             {
                 type = "unlock-recipe",
@@ -29,7 +29,7 @@ function create_mining_drill_technology(mk)
 end
 
 local technologies = {}
-for mk = 2, 3 do
+for mk = 2, 5 do
     table.insert(technologies, create_mining_drill_technology(mk))
 end
 
