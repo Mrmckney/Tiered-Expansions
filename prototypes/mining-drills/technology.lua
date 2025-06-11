@@ -1,13 +1,15 @@
 -- prototypes/mining-drills/technology.lua
 
--- Function to create a mining drill's technology
-function create_mining_drill_technology(mk)
+-- Function to create a mining drill's technology with tier-specific properties
+function create_mining_drill_technology(params)
+    local mk = params.mk
     local prev_mk = mk == 2 and "electric-mining-drill" or ("electric-mining-drill-mk" .. (mk - 1))
+
     local tech = {
         type = "technology",
         name = "electric-mining-drill-mk" .. mk,
-        icon = "__base__/graphics/technology/electric-mining-drill.png",
-        icon_size = 256,
+        icon = params.icon or "__base__/graphics/technology/electric-mining-drill.png",
+        icon_size = params.icon_size or 256,
         effects = {
             {
                 type = "unlock-recipe",
@@ -16,21 +18,72 @@ function create_mining_drill_technology(mk)
         },
         prerequisites = {prev_mk},
         unit = {
-            count = 100 * mk,
-            ingredients = {
+            count = params.count or (100 * mk),
+            ingredients = params.ingredients or {
                 {"automation-science-pack", 1},
                 {"logistic-science-pack", 1},
                 {"chemical-science-pack", 1}
             },
-            time = 30 + 10 * (mk - 1)
+            time = params.time or (30 + 10 * (mk - 1))
         },
+        order = params.order or ("c-b-" .. string.char(96 + mk))
     }
+
+    if params.extra_prerequisites then
+        for _, prereq in ipairs(params.extra_prerequisites) do
+            table.insert(tech.prerequisites, prereq)
+        end
+    end
+
     return tech
 end
 
-local technologies = {}
-for mk = 2, 5 do
-    table.insert(technologies, create_mining_drill_technology(mk))
-end
+local technologies = {
+    -- Mk2 technology
+    create_mining_drill_technology{
+        mk = 2,
+        count = 100,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1}
+        },
+        extra_prerequisites = {"steel-processing", "electronics"}
+    },
+    -- Mk3 technology
+    create_mining_drill_technology{
+        mk = 3,
+        count = 200,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1},
+            {"chemical-science-pack", 1}
+        },
+        extra_prerequisites = {"advanced-circuit"}
+    },
+    -- Mk4 technology
+    create_mining_drill_technology{
+        mk = 4,
+        count = 300,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1},
+            {"chemical-science-pack", 1}
+        },
+        extra_prerequisites = {"electric-engine", "processing-unit"}
+    },
+    -- Mk5 technology
+    create_mining_drill_technology{
+        mk = 5,
+        count = 400,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1},
+            {"chemical-science-pack", 1},
+            {"production-science-pack", 1},
+            {"utility-science-pack", 1}
+        },
+        extra_prerequisites = {"low-density-structure", "production-science-pack"}
+    }
+}
 
 data:extend(technologies)

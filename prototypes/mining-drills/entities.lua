@@ -54,10 +54,10 @@ function create_mining_drill_variant(params)
 end
 
 -- Tints
-local mk2_tint = { r = 0.0, g = 0.4, b = 1.0, a = 1.0 }    -- Deep Bright Blue (Rare)
-local mk3_tint = { r = 0.5, g = 0.0, b = 1.0, a = 1.0 }    -- Deep Bright Purple (Epic)
-local mk4_tint = { r = 1.0, g = 0.5, b = 0.0, a = 1.0 }    -- Deep Bright Orange (Legendary)
-local mk5_tint = { r = 1.0, g = 0.0, b = 0.0, a = 1.0 }    -- Deep Bright Red (Mythic)
+local mk2_tint = { r = 0.0, g = 0.4, b = 1.0, a = 1.0 }    -- Deep Bright Blue
+local mk3_tint = { r = 0.5, g = 0.0, b = 1.0, a = 1.0 }    -- Deep Bright Purple
+local mk4_tint = { r = 1.0, g = 0.5, b = 0.0, a = 1.0 }    -- Deep Bright Orange
+local mk5_tint = { r = 1.0, g = 0.0, b = 0.0, a = 1.0 }    -- Deep Bright Red
 
 -- MK2 drill entity
 local electricMiningDrillMK2 = create_mining_drill_variant{
