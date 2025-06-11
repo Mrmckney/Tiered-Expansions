@@ -1,5 +1,5 @@
 --data.lua
-require("prototypes.entities")
-require("prototypes.items")
-require("prototypes.recipes")
-require("prototypes.technology")
+require("prototypes.mining-drills.entities")
+require("prototypes.mining-drills.items")
+require("prototypes.mining-drills.recipes")
+require("prototypes.mining-drills.technology")

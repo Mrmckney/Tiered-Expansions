@@ -1,4 +1,4 @@
--- prototypes/recipes.lua
+-- prototypes/mining-drills/recipes.lua
 
 -- Function to create a mining drill's recipe
 function create_mining_drill_recipe(mk, ingredients, energy_required)

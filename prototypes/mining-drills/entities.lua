@@ -1,4 +1,4 @@
--- prototypes/entities.lua
+-- prototypes/mining-drills/entities.lua
 
 local util = require("util")
 local mining_drill_base = data.raw["mining-drill"]["electric-mining-drill"]
@@ -54,10 +54,10 @@ function create_mining_drill_variant(params)
 end
 
 -- Tints
-local mk2_tint = { r = 1.0, g = 0.84, b = 0.0, a = 0.9 }  -- Gold-yellow (stronger, richer)
-local mk3_tint = { r = 1.0, g = 0.25, b = 0.25, a = 0.9 } -- Crimson red (aggressive, power)
-local mk4_tint = { r = 0.4, g = 0.6, b = 1.0, a = 0.9 }   -- Tech blue (cool, high-tech)
-local mk5_tint = { r = 0.3, g = 1.0, b = 0.5, a = 0.9 }   -- Emerald green (vibrant, eco-friendly)
+local mk2_tint = { r = 0.0, g = 0.4, b = 1.0, a = 1.0 }    -- Deep Bright Blue (Rare)
+local mk3_tint = { r = 0.5, g = 0.0, b = 1.0, a = 1.0 }    -- Deep Bright Purple (Epic)
+local mk4_tint = { r = 1.0, g = 0.5, b = 0.0, a = 1.0 }    -- Deep Bright Orange (Legendary)
+local mk5_tint = { r = 1.0, g = 0.0, b = 0.0, a = 1.0 }    -- Deep Bright Red (Mythic)
 
 -- MK2 drill entity
 local electricMiningDrillMK2 = create_mining_drill_variant{

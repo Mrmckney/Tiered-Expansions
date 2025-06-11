@@ -1,4 +1,4 @@
--- prototypes/technology.lua
+-- prototypes/mining-drills/technology.lua
 
 -- Function to create a mining drill's technology
 function create_mining_drill_technology(mk)
