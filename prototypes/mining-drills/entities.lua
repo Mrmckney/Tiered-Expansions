@@ -1,6 +1,5 @@
 -- prototypes/mining-drills/entities.lua
 
-local util = require("util")
 local mining_drill_base = data.raw["mining-drill"]["electric-mining-drill"]
 if not mining_drill_base then
     error("Base electric-mining-drill not found!")
@@ -18,30 +17,12 @@ function set_mining_drill_tint(entity, tint)
             end
         end
     end
-    -- Tint the working visualisation animations if they exist
-    if entity.working_visualisations then
-        for _, vis in pairs(entity.working_visualisations) do
-            if vis.animation then
-                vis.animation.tint = tint
-                if vis.animation.hr_version then
-                    vis.animation.hr_version.tint = tint
-                end
-            end
-        end
-    end
 end
 
 -- Function to create a mining drill variant with specific parameters
 function create_mining_drill_variant(params)
-    local drill = util.table.deepcopy(mining_drill_base)
+    local drill = table.deepcopy(mining_drill_base)
     drill.name = params.name
-    drill.icons = {
-        {
-            icon = "__base__/graphics/icons/electric-mining-drill.png",
-            icon_size = 64,
-            tint = params.tint,
-        }
-    }
     drill.mining_speed = params.mining_speed
     drill.energy_usage = params.energy_usage
     drill.minable = {
