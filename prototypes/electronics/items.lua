@@ -18,8 +18,8 @@ function make_electronics_item(name, icon, order_suffix)
 end
 
 -- Icons
-local hyperlogic_unit_icon = "__TieredExpansions__/graphics/icons/hyperlogic-unit.png"
-local singularity_processor_icon = "__TieredExpansions__/graphics/icons/singularity-processor.png"
+local hyperlogic_unit_icon = "__TieredExpansions__/graphics/icons/electronics/hyperlogic-unit.png"
+local singularity_processor_icon = "__TieredExpansions__/graphics/icons/electronics/singularity-processor.png"
 
 -- Hyperlogic Unit
 local hyperlogic_unit_item = make_electronics_item("hyperlogic-unit", hyperlogic_unit_icon, "a")

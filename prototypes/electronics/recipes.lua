@@ -10,22 +10,26 @@ function create_electronics_recipe(name, ingredients, energy_required)
         results = {
             {type = "item", name = name, amount = 1}
         },
-        energy_required = energy_required
+        energy_required = energy_required,
+        category = "crafting-with-fluid"
     }
 end
 
 -- Ingredients for Hyperlogic Unit
 local hyperlogic_unit_ingredients = {
     {type = "item", name = "processing-unit", amount = 5},
-    {type = "item", name = "advanced-circuit", amount = 10},
-    {type = "item", name = "steel-plate", amount = 20}
+    {type = "item", name = "low-density-structure", amount = 2},
+    {type = "item", name = "plastic-bar", amount = 10},
+    {type = "fluid", name = "sulfuric-acid", amount = 10}
 }
 
 -- Ingredients for Singularity Processor
 local singularity_processor_ingredients = {
     {type = "item", name = "hyperlogic-unit", amount = 1},
     {type = "item", name = "processing-unit", amount = 10},
-    {type = "item", name = "steel-plate", amount = 30}
+    {type = "item", name = "low-density-structure", amount = 5},
+    {type = "item", name = "heat-pipe", amount = 2},
+    {type = "fluid", name = "sulfuric-acid", amount = 20}
 }
 
 -- Create recipes for electronics

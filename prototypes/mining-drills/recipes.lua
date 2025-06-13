@@ -16,31 +16,31 @@ end
 
 -- ingredients for MK2
 local mk2_ingredients = {
-  {type = "item", name = "steel-plate", amount = 10},
-  {type = "item", name = "electronic-circuit", amount = 10},
+  {type = "item", name = "steel-plate", amount = 4},
+  {type = "item", name = "advanced-circuit", amount = 7},
   {type = "item", name = "iron-gear-wheel", amount = 10},
   {type = "item", name = "electric-mining-drill", amount = 1},
 }
 -- ingredients for MK3
 local mk3_ingredients = {
-  {type = "item", name = "steel-plate", amount = 20},
-  {type = "item", name = "advanced-circuit", amount = 5},
+  {type = "item", name = "steel-plate", amount = 8},
+  {type = "item", name = "processing-unit", amount = 5},
   {type = "item", name = "iron-gear-wheel", amount = 15},
   {type = "item", name = "electric-mining-drill-mk2", amount = 1},
 }
 
 -- ingredients for MK4
 local mk4_ingredients = {
-  {type = "item", name = "steel-plate", amount = 30},
-  {type = "item", name = "processing-unit", amount = 5},
+  {type = "item", name = "steel-plate", amount = 16},
+  {type = "item", name = "hyperlogic-unit", amount = 2},
   {type = "item", name = "electric-engine-unit", amount = 2},
   {type = "item", name = "electric-mining-drill-mk3", amount = 1},
 }
 
 -- ingredients for MK5
 local mk5_ingredients = {
-  {type = "item", name = "steel-plate", amount = 50},
-  {type = "item", name = "processing-unit", amount = 10},
+  {type = "item", name = "steel-plate", amount = 20},
+  {type = "item", name = "singularity-processor", amount = 1},
   {type = "item", name = "electric-engine-unit", amount = 4},
   {type = "item", name = "low-density-structure", amount = 2},
   {type = "item", name = "electric-mining-drill-mk4", amount = 1},

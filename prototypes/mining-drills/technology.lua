@@ -9,7 +9,7 @@ function create_mining_drill_technology(params)
         type = "technology",
         name = "electric-mining-drill-mk" .. mk,
         icon = params.icon or "__base__/graphics/technology/electric-mining-drill.png",
-        icon_size = params.icon_size or 256,
+        icon_size = 256,
         effects = {
             {
                 type = "unlock-recipe",
@@ -18,15 +18,11 @@ function create_mining_drill_technology(params)
         },
         prerequisites = {prev_mk},
         unit = {
-            count = params.count or (100 * mk),
-            ingredients = params.ingredients or {
-                {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1}
-            },
-            time = params.time or (30 + 10 * (mk - 1))
+            count = params.count,
+            ingredients = params.ingredients,
+            time = (30 + 10 * (mk - 1))
         },
-        order = params.order or ("c-b-" .. string.char(96 + mk))
+        order = ("c-b-" .. string.char(96 + mk))
     }
 
     if params.extra_prerequisites then
@@ -38,8 +34,8 @@ function create_mining_drill_technology(params)
     return tech
 end
 
-local technologies = {
-    -- Mk2 technology
+local drill_technologies = {
+    -- Mk2 Mining Drill Technology
     create_mining_drill_technology{
         mk = 2,
         count = 100,
@@ -47,9 +43,9 @@ local technologies = {
             {"automation-science-pack", 1},
             {"logistic-science-pack", 1}
         },
-        extra_prerequisites = {"steel-processing", "electronics"}
+        extra_prerequisites = {"advanced-circuit"}
     },
-    -- Mk3 technology
+    -- Mk3 Mining Drill Technology
     create_mining_drill_technology{
         mk = 3,
         count = 200,
@@ -58,9 +54,9 @@ local technologies = {
             {"logistic-science-pack", 1},
             {"chemical-science-pack", 1}
         },
-        extra_prerequisites = {"advanced-circuit"}
+        extra_prerequisites = {"processing-unit"}
     },
-    -- Mk4 technology
+    -- Mk4 Mining Drill Technology
     create_mining_drill_technology{
         mk = 4,
         count = 300,
@@ -69,9 +65,14 @@ local technologies = {
             {"logistic-science-pack", 1},
             {"chemical-science-pack", 1}
         },
-        extra_prerequisites = {"electric-engine", "processing-unit"}
+        extra_prerequisites = {
+            "low-density-structure",
+            "production-science-pack",
+            "hyperlogic-unit",
+            "electric-engine"
+        }
     },
-    -- Mk5 technology
+    -- Mk5 Mining Drill Technology
     create_mining_drill_technology{
         mk = 5,
         count = 400,
@@ -82,8 +83,12 @@ local technologies = {
             {"production-science-pack", 1},
             {"utility-science-pack", 1}
         },
-        extra_prerequisites = {"low-density-structure", "production-science-pack"}
+        extra_prerequisites = {
+            "singularity-processor",
+            "nuclear-power",
+            "low-density-structure"
+        }
     }
 }
 
-data:extend(technologies)
+data:extend(drill_technologies)
