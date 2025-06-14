@@ -33,14 +33,14 @@ local assembling_machine_mk4_technology = create_assembling_machine_technology(
     30
 )
 
--- local assembling_machine_mk5_technology = create_assembling_machine_technology(
---     "assembling-machine-mk5",
---     {"assembling-machine-mk4", "processing-unit"},
---     300,
---     40
--- )
+local assembling_machine_mk5_technology = create_assembling_machine_technology(
+    "assembling-machine-mk5",
+    {"assembling-machine-mk4", "processing-unit"},
+    300,
+    40
+)
 
 data:extend({
     assembling_machine_mk4_technology,
-    -- assembling_machine_mk5_technology
+    assembling_machine_mk5_technology
 })

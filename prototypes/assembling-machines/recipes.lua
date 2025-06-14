@@ -11,9 +11,9 @@ function create_assembling_machine_recipe(name, ingredients, energy_required, ic
         },
         energy_required = energy_required,
         category = "crafting",
-            icon = icon .. "-recipe.png",
-            icon_size = 64,
-            icon_mipmaps = 1,
+        icon = icon .. "-recipe.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
     }
 end
 
@@ -40,7 +40,7 @@ local mk5_ingredients = {
 
 local assembling_machine_recipes = {
     create_assembling_machine_recipe("assembling-machine-mk4", mk4_ingredients, 15, assembling_machine_mk4_icon), -- Assembling Machine Mk4 recipe
-    -- create_assembling_machine_recipe("assembling-machine-mk5", mk5_ingredients, 20)  -- Assembling Machine Mk5 recipe
+    create_assembling_machine_recipe("assembling-machine-mk5", mk5_ingredients, 20, assembling_machine_mk5_icon)  -- Assembling Machine Mk5 recipe
 }
 
 data:extend(assembling_machine_recipes)

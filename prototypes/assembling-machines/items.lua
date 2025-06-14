@@ -26,9 +26,9 @@ local assembling_machine_mk5_icon = "__TieredExpansions__/graphics/entity/assemb
 local assembling_machine_mk4_item = make_assembling_machine_item("assembling-machine-mk4", assembling_machine_mk4_icon, "a")
 
 -- Assembling Machine Mk5
--- local assembling_machine_mk5_item = make_assembling_machine_item("assembling-machine-mk5", assembling_machine_mk5_icon, "b")
+local assembling_machine_mk5_item = make_assembling_machine_item("assembling-machine-mk5", assembling_machine_mk5_icon, "b")
 
 data:extend({
     assembling_machine_mk4_item,
-    -- assembling_machine_mk5_item
+    assembling_machine_mk5_item
 })
