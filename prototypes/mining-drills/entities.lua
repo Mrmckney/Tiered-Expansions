@@ -41,7 +41,7 @@ local mk4_tint = { r = 0.5, g = 0.0, b = 1.0, a = 1.0 }    -- Deep Bright Purple
 local mk5_tint = { r = 1.0, g = 0.5, b = 0.0, a = 1.0 }    -- Deep Bright Orange
 
 -- MK2 drill entity
-local electricMiningDrillMK2 = create_mining_drill_variant{
+local electric_mining_drill_mk2 = create_mining_drill_variant{
     name = "electric-mining-drill-mk2",
     tint = mk2_tint,
     mining_speed = 1.0,
@@ -49,7 +49,7 @@ local electricMiningDrillMK2 = create_mining_drill_variant{
 }
 
 -- MK3 drill entity
-local electricMiningDrillMK3 = create_mining_drill_variant{
+local electric_mining_drill_mk3 = create_mining_drill_variant{
     name = "electric-mining-drill-mk3",
     tint = mk3_tint,
     mining_speed = 1.75,
@@ -57,7 +57,7 @@ local electricMiningDrillMK3 = create_mining_drill_variant{
 }
 
 -- MK4 drill entity
-local electricMiningDrillMK4 = create_mining_drill_variant{
+local electric_mining_drill_mk4 = create_mining_drill_variant{
     name = "electric-mining-drill-mk4",
     tint = mk4_tint,
     mining_speed = 2.5,
@@ -65,7 +65,7 @@ local electricMiningDrillMK4 = create_mining_drill_variant{
 }
 
 -- MK5 drill entity
-local electricMiningDrillMK5 = create_mining_drill_variant{
+local electric_mining_drill_mk5 = create_mining_drill_variant{
     name = "electric-mining-drill-mk5",
     tint = mk5_tint,
     mining_speed = 3.5,
@@ -73,10 +73,10 @@ local electricMiningDrillMK5 = create_mining_drill_variant{
 }
 
 local drill_entities = {
-    electricMiningDrillMK2,
-    electricMiningDrillMK3,
-    electricMiningDrillMK4,
-    electricMiningDrillMK5,
+    electric_mining_drill_mk2,
+    electric_mining_drill_mk3,
+    electric_mining_drill_mk4,
+    electric_mining_drill_mk5,
 }
 
 data:extend(drill_entities)

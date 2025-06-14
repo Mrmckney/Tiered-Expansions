@@ -8,3 +8,8 @@ require("prototypes.electronics.entities")
 require("prototypes.electronics.items")
 require("prototypes.electronics.recipes")
 require("prototypes.electronics.technology")
+
+require("prototypes.assembling-machines.entities")
+require("prototypes.assembling-machines.items")
+require("prototypes.assembling-machines.recipes")
+require("prototypes.assembling-machines.technology")
