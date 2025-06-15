@@ -24,18 +24,15 @@ local assembling_machine_mk5_icon = "__TieredExpansions__/graphics/entity/assemb
 -- Ingredients for Assembling Machine Mk4
 local mk4_ingredients = {
     {type = "item", name = "assembling-machine-3", amount = 1},
-    {type = "item", name = "hyperlogic-unit", amount = 2},
-    {type = "item", name = "steel-plate", amount = 20},
-    {type = "item", name = "electric-engine-unit", amount = 2}
+    {type = "item", name = "hyperlogic-unit", amount = 5},
+    {type = "item", name = "speed-module-2", amount = 5},
 }
 
 -- Ingredients for Assembling Machine Mk5
 local mk5_ingredients = {
     {type = "item", name = "assembling-machine-mk4", amount = 1},
-    {type = "item", name = "singularity-processor", amount = 1},
-    {type = "item", name = "steel-plate", amount = 30},
-    {type = "item", name = "electric-engine-unit", amount = 4},
-    {type = "item", name = "low-density-structure", amount = 2}
+    {type = "item", name = "singularity-processor", amount = 2},
+    {type = "item", name = "speed-module-3", amount = 2}
 }
 
 local assembling_machine_recipes = {

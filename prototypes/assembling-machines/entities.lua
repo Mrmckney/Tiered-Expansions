@@ -1,36 +1,16 @@
 -- prototypes/assembling-machines/entities.lua
 
-local assembling_machine_base = data.raw["assembling-machine"]["assembling-machine-3"]
-if not assembling_machine_base then
+local base = data.raw["assembling-machine"]["assembling-machine-3"]
+if not base then
     error("Base assembling-machine-3 not found!")
 end
 
--- Function to create a copy of the base assembling machine
-function create_assembling_machine_variant(params)
-    local assembling_machine = table.deepcopy(assembling_machine_base)
-
-    assembling_machine.name = params.name
-    assembling_machine.minable = {
-        mining_time = 0.5,
-        result = params.name
-    }
-    assembling_machine.crafting_speed = params.crafting_speed
-    assembling_machine.energy_usage = params.energy_usage
-    assembling_machine.flags = {"placeable-neutral", "player-creation"}
-    assembling_machine.max_health = 500
-    assembling_machine.dying_explosion = "medium-explosion"
-    assembling_machine.resistances = {
-        { type = "fire", percent = 70 },
-        { type = "impact", percent = 30 }
-    }
-    assembling_machine.collision_box = {{-1.2, -1.2}, {1.2, 1.2}}
-    assembling_machine.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
-
-    assembling_machine.graphics_set = {
+function make_graphics_set(icon)
+    return {
         animation = {
-           layers = {
+            layers = {
                 {
-                    filename = params.icon .. ".png",
+                    filename = icon .. ".png",
                     priority = "extra-high",
                     width = 214,
                     height = 237,
@@ -42,10 +22,12 @@ function create_assembling_machine_variant(params)
             }
         }
     }
+end
 
-    local pipe_picture = {
+function make_pipe_picture(icon)
+    return {
         north = {
-            filename = params.icon .. "-pipe-N.png",
+            filename = icon .. "-pipe-N.png",
             priority = "extra-high",
             width = 71,
             height = 38,
@@ -53,7 +35,7 @@ function create_assembling_machine_variant(params)
             scale = 0.5
         },
         east = {
-            filename = params.icon .. "-pipe-E.png",
+            filename = icon .. "-pipe-E.png",
             priority = "extra-high",
             width = 42,
             height = 76,
@@ -61,7 +43,7 @@ function create_assembling_machine_variant(params)
             scale = 0.5
         },
         south = {
-            filename = params.icon .. "-pipe-S.png",
+            filename = icon .. "-pipe-S.png",
             priority = "extra-high",
             width = 88,
             height = 61,
@@ -69,7 +51,7 @@ function create_assembling_machine_variant(params)
             scale = 0.5
         },
         west = {
-            filename = params.icon .. "-pipe-W.png",
+            filename = icon .. "-pipe-W.png",
             priority = "extra-high",
             width = 39,
             height = 73,
@@ -77,55 +59,59 @@ function create_assembling_machine_variant(params)
             scale = 0.5
         }
     }
+end
 
-    -- Assign custom pipe picture if fluid_boxes exist
-    if assembling_machine.fluid_boxes then
-        for _, box in pairs(assembling_machine.fluid_boxes) do
+function create_assembling_machine_variant(params)
+    local machine = table.deepcopy(base)
+
+    machine.name = params.name
+    machine.minable = { mining_time = 0.5, result = params.name }
+    machine.crafting_speed = params.crafting_speed
+    machine.energy_usage = params.energy_usage
+    machine.flags = {"placeable-neutral", "player-creation"}
+    machine.max_health = params.max_health
+    machine.dying_explosion = "medium-explosion"
+    machine.resistances = {
+        { type = "fire", percent = 70 },
+        { type = "impact", percent = 30 }
+    }
+    machine.collision_box = {{-1.2, -1.2}, {1.2, 1.2}}
+    machine.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
+    machine.module_slots = params.module_slots
+
+    machine.graphics_set = make_graphics_set(params.icon)
+
+    if machine.fluid_boxes then
+        local pipe_picture = make_pipe_picture(params.icon)
+        for _, box in pairs(machine.fluid_boxes) do
             box.pipe_picture = pipe_picture
         end
     end
-    
-    assembling_machine.corpse = "assembling-machine-mk4-remnants"
 
-    return assembling_machine
+    machine.corpse = params.name .. "-remnants"
+
+    return machine
 end
 
--- Assembling Machine Mk4
-local assembling_machine_mk4 = create_assembling_machine_variant({
+local assembling_machine_mk4 = create_assembling_machine_variant{
     name = "assembling-machine-mk4",
-    crafting_speed = 2.0,
-    energy_usage = "300kW",
+    crafting_speed = 2,
+    energy_usage = "600kW",
     icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-4",
-})
+    max_health = 800,
+    module_slots = 6,
+}
 
--- Assembling Machine Mk5
-local assembling_machine_mk5 = create_assembling_machine_variant({
+local assembling_machine_mk5 = create_assembling_machine_variant{
     name = "assembling-machine-mk5",
-    crafting_speed = 3.0,
-    energy_usage = "400kW",
+    crafting_speed = 3,
+    energy_usage = "800kW",
     icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-5",
-})
+    max_health = 1000,
+    module_slots = 8,
+}
 
 data:extend({
     assembling_machine_mk4,
     assembling_machine_mk5
-})
-
-data:extend({
-  {
-    type = "corpse",
-    name = "assembling-machine-mk4-remnants",
-    icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-4-remnants.png",
-    icon_size = 64,
-    animation = {
-      filename = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-4-remnants.png",
-      width = 64,
-      height = 64,
-      frame_count = 1,
-      direction_count = 1,
-      shift = {0, 0}
-    },
-    time_before_removed = 60 * 60 * 15, -- 15 minutes
-    selectable_in_game = false
-  }
 })

@@ -9,6 +9,7 @@ require("prototypes.electronics.items")
 require("prototypes.electronics.recipes")
 require("prototypes.electronics.technology")
 
+require("prototypes.assembling-machines.corpses")
 require("prototypes.assembling-machines.entities")
 require("prototypes.assembling-machines.items")
 require("prototypes.assembling-machines.recipes")
