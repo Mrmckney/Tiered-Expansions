@@ -29,6 +29,7 @@ function create_mining_drill_variant(params)
         mining_time = 0.5,
         result = params.name
     }
+    drill.module_slots = params.module_slots
 
     set_mining_drill_tint(drill, params.tint)
     return drill
@@ -46,6 +47,7 @@ local electric_mining_drill_mk2 = create_mining_drill_variant{
     tint = mk2_tint,
     mining_speed = 1.0,
     energy_usage = "120kW",
+    module_slots = 4
 }
 
 -- MK3 drill entity
@@ -54,6 +56,7 @@ local electric_mining_drill_mk3 = create_mining_drill_variant{
     tint = mk3_tint,
     mining_speed = 1.75,
     energy_usage = "180kW",
+    module_slots = 5
 }
 
 -- MK4 drill entity
@@ -62,6 +65,7 @@ local electric_mining_drill_mk4 = create_mining_drill_variant{
     tint = mk4_tint,
     mining_speed = 2.5,
     energy_usage = "240kW",
+    module_slots = 6
 }
 
 -- MK5 drill entity
@@ -70,6 +74,7 @@ local electric_mining_drill_mk5 = create_mining_drill_variant{
     tint = mk5_tint,
     mining_speed = 3.5,
     energy_usage = "360kW",
+    module_slots = 7
 }
 
 local drill_entities = {

@@ -63,7 +63,8 @@ local drill_technologies = {
         ingredients = {
             {"automation-science-pack", 1},
             {"logistic-science-pack", 1},
-            {"chemical-science-pack", 1}
+            {"chemical-science-pack", 1},
+            {"production-science-pack", 1}
         },
         extra_prerequisites = {
             "low-density-structure",

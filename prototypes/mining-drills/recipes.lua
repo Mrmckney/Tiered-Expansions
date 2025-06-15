@@ -3,14 +3,14 @@
 -- Function to create a mining drill's recipe
 function create_mining_drill_recipe(mk, ingredients, energy_required)
     return {
-        type = "recipe", -- Recipe type
-        name = "electric-mining-drill-mk" .. mk, -- Unique name for each tier
-        enabled = false, -- Initially disabled, must be researched
-        ingredients = ingredients, -- Ingredients for the recipe
+        type = "recipe",
+        name = "electric-mining-drill-mk" .. mk,
+        enabled = false,
+        ingredients = ingredients,
         results = {
             {type = "item", name = "electric-mining-drill-mk" .. mk, amount = 1}
-        }, -- Result item produced by the recipe
-        energy_required = 2 -- Default energy required to craft the drill
+        },
+        energy_required = 2
     }
 end
 

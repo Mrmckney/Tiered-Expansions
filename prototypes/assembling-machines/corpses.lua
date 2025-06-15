@@ -8,7 +8,7 @@ function create_assembling_machine_remnants(mk)
         name = "assembling-machine-mk" .. mk .. "-remnants",
         icons = {
             {
-                icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-" .. mk .. "-recipe.png",
+                icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-" .. mk .. "-recipe.png",
                 icon_size = 64,
                 icon_mipmaps = 1
             }

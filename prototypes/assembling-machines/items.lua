@@ -19,8 +19,8 @@ function make_assembling_machine_item(name, icon, order_suffix)
 end
 
 -- Icons
-local assembling_machine_mk4_icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-4"
-local assembling_machine_mk5_icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-5"
+local assembling_machine_mk4_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-4"
+local assembling_machine_mk5_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-5"
 
 -- Assembling Machine Mk4
 local assembling_machine_mk4_item = make_assembling_machine_item("assembling-machine-mk4", assembling_machine_mk4_icon, "a")

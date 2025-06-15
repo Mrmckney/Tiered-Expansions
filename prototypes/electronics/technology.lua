@@ -41,7 +41,7 @@ local hyperlogic_unit_technology = create_electronics_technology{
     },
     time = 30,
     order = "c-b-h",
-    icon = "__TieredExpansions__/graphics/icons/electronics/hyperlogic-unit-technology.png",
+    icon = "__TieredExpansions__/graphics/technology/electronics/hyperlogic-unit-technology.png",
     icon_size = 256,
     icon_mipmaps = 1
 }
@@ -65,7 +65,7 @@ local singularity_processor_technology = create_electronics_technology{
     },
     time = 45,
     order = "c-b-s",
-    icon = "__TieredExpansions__/graphics/icons/electronics/singularity-processor-technology.png",
+    icon = "__TieredExpansions__/graphics/technology/electronics/singularity-processor-technology.png",
     icon_size = 256,
     icon_mipmaps = 1
 }

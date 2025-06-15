@@ -18,8 +18,8 @@ function create_assembling_machine_recipe(name, ingredients, energy_required, ic
 end
 
 -- Icons
-local assembling_machine_mk4_icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-4"
-local assembling_machine_mk5_icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-5"
+local assembling_machine_mk4_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-4"
+local assembling_machine_mk5_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-5"
 
 -- Ingredients for Assembling Machine Mk4
 local mk4_ingredients = {

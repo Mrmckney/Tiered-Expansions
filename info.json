@@ -5,5 +5,5 @@
     "author": "Matt From IT",
     "factorio_version": "2.0",
     "dependencies": ["base >= 2.0"],
-    "description": "This mod includes more tiers for basic items and recipes, allowing for more complex production chains and resource management."
+    "description": "Enhances Factorio gameplay by introducing additional tiers for fundamental items and recipes. Unlock new levels of complexity in production chains, optimize resource management, and expand your factory's capabilities with progressive upgrades."
 }
