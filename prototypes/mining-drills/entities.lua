@@ -20,7 +20,7 @@ function set_mining_drill_tint(entity, tint)
 end
 
 -- Create drill from base, customize icon, tint, parameters
-function create_mining_drill_entity(mk, mining_speed, energy_usage, module_slots, tint)
+function create_mining_drill_entity(mk, mining_speed, energy_usage, module_slots, tint, max_health)
     local drill = table.deepcopy(mining_drill_base)
     local name = "electric-mining-drill-mk" .. mk
 
@@ -32,6 +32,7 @@ function create_mining_drill_entity(mk, mining_speed, energy_usage, module_slots
     drill.mining_speed = mining_speed
     drill.energy_usage = energy_usage
     drill.module_slots = module_slots
+    drill.max_health = max_health
     drill.icon = "__TieredExpansions__/graphics/icons/mining-drills/" .. name .. ".png"
     drill.icon_size = 64
     drill.icon_mipmaps = 4
@@ -58,7 +59,8 @@ for mk = 2, 5 do
         1 + 0.75 * (mk - 2),        -- mining speed
         (70 * mk) .. "kW",          -- energy usage
         2 + mk,                     -- module slots
-        tints[mk - 1]               -- tint
+        tints[mk - 1],              -- tint
+        (500 + 200 * (mk - 2))      -- max health
     ))
 end
 
