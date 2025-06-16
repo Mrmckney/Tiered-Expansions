@@ -3,13 +3,14 @@
 -- Function to create a mining drill's technology with tier-specific properties
 function create_mining_drill_technology(params)
     local mk = params.mk
-    local prev_mk = mk == 2 and "electric-mining-drill" or ("electric-mining-drill-mk" .. (mk - 1))
+    local prev_mk = mk == 2 and "electric-mining-drill" or "electric-mining-drill-mk" .. (mk - 1)
 
     local tech = {
         type = "technology",
         name = "electric-mining-drill-mk" .. mk,
-        icon = params.icon or "__base__/graphics/technology/electric-mining-drill.png",
+        icon = "__TieredExpansions__/graphics/technology/mining-drills/electric-mining-drill-" .. mk .. ".png",
         icon_size = 256,
+        icon_mipmaps = 4,
         effects = {
             {
                 type = "unlock-recipe",
