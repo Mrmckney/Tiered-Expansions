@@ -65,6 +65,9 @@ function create_assembling_machine_variant(params)
     local machine = table.deepcopy(base)
 
     machine.name = params.name
+    machine.icon = params.recipe_icon .. ".png"
+    machine.icon_size = 64
+    machine.icon_mipmaps = 1
     machine.minable = { mining_time = 0.5, result = params.name }
     machine.crafting_speed = params.crafting_speed
     machine.energy_usage = params.energy_usage
@@ -98,6 +101,7 @@ local assembling_machine_mk4 = create_assembling_machine_variant{
     crafting_speed = 2,
     energy_usage = "600kW",
     icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-4",
+    recipe_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-4-recipe",
     max_health = 800,
     module_slots = 6,
 }
@@ -107,6 +111,7 @@ local assembling_machine_mk5 = create_assembling_machine_variant{
     crafting_speed = 3,
     energy_usage = "800kW",
     icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-5",
+    recipe_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-5-recipe",
     max_health = 1000,
     module_slots = 8,
 }

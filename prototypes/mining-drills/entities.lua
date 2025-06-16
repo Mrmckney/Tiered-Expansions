@@ -5,8 +5,8 @@ if not mining_drill_base then
     error("Base electric-mining-drill not found!")
 end
 
+-- Tint the animation layers
 function set_mining_drill_tint(entity, tint)
-    -- Tint the main animation layers if they exist
     if entity.graphics_set and entity.graphics_set.animation then
         for _, animation in pairs(entity.graphics_set.animation) do
             if animation.layers and animation.layers[1] then
@@ -19,69 +19,47 @@ function set_mining_drill_tint(entity, tint)
     end
 end
 
--- Function to create a mining drill variant with specific parameters
-function create_mining_drill_variant(params)
+-- Create drill from base, customize icon, tint, parameters
+function create_mining_drill_entity(mk, mining_speed, energy_usage, module_slots, tint)
     local drill = table.deepcopy(mining_drill_base)
-    drill.name = params.name
-    drill.mining_speed = params.mining_speed
-    drill.energy_usage = params.energy_usage
+    local name = "electric-mining-drill-mk" .. mk
+
+    drill.name = name
     drill.minable = {
         mining_time = 0.5,
-        result = params.name
+        result = name
     }
-    drill.module_slots = params.module_slots
+    drill.mining_speed = mining_speed
+    drill.energy_usage = energy_usage
+    drill.module_slots = module_slots
+    drill.icon = "__TieredExpansions__/graphics/icons/mining-drills/" .. name .. ".png"
+    drill.icon_size = 64
+    drill.icon_mipmaps = 4
 
-    set_mining_drill_tint(drill, params.tint)
+    set_mining_drill_tint(drill, tint)
+
     return drill
 end
 
--- Tints
-local mk2_tint = { r = 1.0, g = 0.0, b = 0.0, a = 1.0 }    -- Deep Bright Red
-local mk3_tint = { r = 0.0, g = 0.4, b = 1.0, a = 1.0 }    -- Deep Bright Blue
-local mk4_tint = { r = 0.5, g = 0.0, b = 1.0, a = 1.0 }    -- Deep Bright Purple
-local mk5_tint = { r = 1.0, g = 0.5, b = 0.0, a = 1.0 }    -- Deep Bright Orange
-
--- MK2 drill entity
-local electric_mining_drill_mk2 = create_mining_drill_variant{
-    name = "electric-mining-drill-mk2",
-    tint = mk2_tint,
-    mining_speed = 1.0,
-    energy_usage = "120kW",
-    module_slots = 4
+-- Tints per tier
+local tints = {
+    { r = 1.0, g = 0.0, b = 0.0, a = 1.0 },    -- Red
+    { r = 0.0, g = 0.4, b = 1.0, a = 1.0 },    -- Blue
+    { r = 0.5, g = 0.0, b = 1.0, a = 1.0 },    -- Purple
+    { r = 1.0, g = 0.5, b = 0.0, a = 1.0 }     -- Orange
 }
 
--- MK3 drill entity
-local electric_mining_drill_mk3 = create_mining_drill_variant{
-    name = "electric-mining-drill-mk3",
-    tint = mk3_tint,
-    mining_speed = 1.75,
-    energy_usage = "180kW",
-    module_slots = 5
-}
+-- Drill list
+local drill_entities = {}
 
--- MK4 drill entity
-local electric_mining_drill_mk4 = create_mining_drill_variant{
-    name = "electric-mining-drill-mk4",
-    tint = mk4_tint,
-    mining_speed = 2.5,
-    energy_usage = "240kW",
-    module_slots = 6
-}
-
--- MK5 drill entity
-local electric_mining_drill_mk5 = create_mining_drill_variant{
-    name = "electric-mining-drill-mk5",
-    tint = mk5_tint,
-    mining_speed = 3.5,
-    energy_usage = "360kW",
-    module_slots = 7
-}
-
-local drill_entities = {
-    electric_mining_drill_mk2,
-    electric_mining_drill_mk3,
-    electric_mining_drill_mk4,
-    electric_mining_drill_mk5,
-}
+for mk = 2, 5 do
+    table.insert(drill_entities, create_mining_drill_entity(
+        mk,
+        1 + 0.75 * (mk - 2),        -- mining speed
+        (70 * mk) .. "kW",          -- energy usage
+        2 + mk,                     -- module slots
+        tints[mk - 1]               -- tint
+    ))
+end
 
 data:extend(drill_entities)

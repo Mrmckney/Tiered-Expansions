@@ -13,18 +13,17 @@ function make_mining_drill_item(mk)
             {
                 icon = "__TieredExpansions__/graphics/icons/mining-drills/electric-mining-drill-mk" ..mk.. ".png", -- Base icon
                 icon_size = 64,
-                icon_mipmaps = 1
+                icon_mipmaps = 4
             }
         }
     }
 end
 
-local drill_items = {
-    make_mining_drill_item(2),  -- mk2 drill
-    make_mining_drill_item(3),  -- mk3 drill
-    make_mining_drill_item(4),  -- mk4 drill
-    make_mining_drill_item(5)   -- mk5 drill
-}
+local drill_items = {}
+
+for mk = 2, 5 do
+    table.insert(drill_items, make_mining_drill_item(mk))
+end
 
 data:extend(drill_items)
 
