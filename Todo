@@ -1,16 +1,19 @@
 # Todo List
+[X] == Issues
+[!] == Work in progress
+[ ] == Have not started
 
-- [ ] add 2 and 3 cars
-- [ ] add 2 and 3 tanks
-- [ ] add 2 - 5 walls and gates
 - [ ] add 2 more tiers of belts / splitters / undergrounds
 - [ ] add 2 more tiers of inserters
+- [ ] add 2 and 3 gun turrets
+- [ ] add 2 and 3 laser turrets
+- [ ] add 2 and 3 flamethrower turrets
+- [ ] add 2 and 3 artillery
+- [X] add 2 and 3 cars 
+- [ ] add 2 and 3 tanks
+- [ ] add 2 - 5 walls and gates
 - [ ] add 3 more mags
 - [ ] add healing wall
-- [ ] add 2 and 3 flamethrower turrets
-- [ ] add 2 and 3 laser turrets
-- [ ] add 2 and 3 gun turrets
-- [ ] add 2 and 3 artillery
 - [ ] add 2 and 3 radar
 - [ ] add 2 - 5 contructions / 4 logistic robots
 - [ ] add custom modules ?!

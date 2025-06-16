@@ -15,7 +15,8 @@ require("prototypes.assembling-machines.items")
 require("prototypes.assembling-machines.recipes")
 require("prototypes.assembling-machines.technology")
 
-require("prototypes.vehicles.entities")
-require("prototypes.vehicles.items")
-require("prototypes.vehicles.recipes")
-require("prototypes.vehicles.technology")
+-- Under construction, vehicles are not yet complete
+-- require("prototypes.vehicles.entities")
+-- require("prototypes.vehicles.items")
+-- require("prototypes.vehicles.recipes")
+-- require("prototypes.vehicles.technology")

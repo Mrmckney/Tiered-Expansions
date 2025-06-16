@@ -16,9 +16,9 @@ function create_vehicle_item(mk, name, order)
 end
 
 local vehicle_items = {
-    create_vehicle_item(2, "car-2", "b[car]-b[car-2]"),
-    create_vehicle_item(3, "car-3", "b[car]-c[car-3]"),
-    create_vehicle_item(4, "car-4", "b[car]-d[car-4]"),
+    create_vehicle_item(2, "car-2", "b[car]-a[car-2]"),
+    create_vehicle_item(3, "car-3", "b[car]-b[car-3]"),
+    create_vehicle_item(4, "car-4", "b[car]-c[car-4]"),
 }
 
 data:extend(vehicle_items)
