@@ -70,7 +70,33 @@ local singularity_processor_technology = create_electronics_technology{
     icon_mipmaps = 1
 }
 
+-- Quantum Processor Technology
+local quantum_processor_technology = create_electronics_technology{ 
+    name = "quantum-processor",
+    prerequisites = {
+        "singularity-processor",
+        "space-science-pack",
+        "low-density-structure",
+        "rocket-silo"
+    },
+    count = 500,
+    ingredients = {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1}
+    },
+    time = 60,
+    order = "c-b-q",
+    icon = "__TieredExpansions__/graphics/technology/electronics/quantum-processor-technology.png",
+    icon_size = 256,
+    icon_mipmaps = 1
+}
+
 data:extend({
     hyperlogic_unit_technology,
-    singularity_processor_technology
+    singularity_processor_technology,
+    quantum_processor_technology
 })

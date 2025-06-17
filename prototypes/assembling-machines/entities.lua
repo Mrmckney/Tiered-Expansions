@@ -116,7 +116,18 @@ local assembling_machine_mk5 = create_assembling_machine_variant{
     module_slots = 8,
 }
 
+local assembling_machine_mk6 = create_assembling_machine_variant{
+    name = "assembling-machine-mk6",
+    crafting_speed = 5,
+    energy_usage = "1000kW",
+    icon = "__TieredExpansions__/graphics/entity/assembling-machines/assembling-machine-6",
+    recipe_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-6-recipe",
+    max_health = 1200,
+    module_slots = 10,
+}
+
 data:extend({
     assembling_machine_mk4,
-    assembling_machine_mk5
+    assembling_machine_mk5,
+    assembling_machine_mk6
 })

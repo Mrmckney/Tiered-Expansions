@@ -21,6 +21,7 @@ end
 -- Icons
 local assembling_machine_mk4_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-4"
 local assembling_machine_mk5_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-5"
+local assembling_machine_mk6_icon = "__TieredExpansions__/graphics/icons/assembling-machines/assembling-machine-6"
 
 -- Assembling Machine Mk4
 local assembling_machine_mk4_item = make_assembling_machine_item("assembling-machine-mk4", assembling_machine_mk4_icon, "a")
@@ -28,7 +29,11 @@ local assembling_machine_mk4_item = make_assembling_machine_item("assembling-mac
 -- Assembling Machine Mk5
 local assembling_machine_mk5_item = make_assembling_machine_item("assembling-machine-mk5", assembling_machine_mk5_icon, "b")
 
+-- Assembling Machine Mk6
+local assembling_machine_mk6_item = make_assembling_machine_item("assembling-machine-mk6", assembling_machine_mk6_icon, "c")
+
 data:extend({
     assembling_machine_mk4_item,
-    assembling_machine_mk5_item
+    assembling_machine_mk5_item,
+    assembling_machine_mk6_item
 })

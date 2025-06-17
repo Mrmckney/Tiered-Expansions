@@ -35,8 +35,10 @@ end
 
 local assembling_machine_4_remnants = create_assembling_machine_remnants(4)
 local assembling_machine_5_remnants = create_assembling_machine_remnants(5)
+local assembling_machine_6_remnants = create_assembling_machine_remnants(6)
 
 data:extend({
     assembling_machine_4_remnants,
-    assembling_machine_5_remnants
+    assembling_machine_5_remnants,
+    assembling_machine_6_remnants
 })

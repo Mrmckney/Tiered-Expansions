@@ -24,7 +24,13 @@ local singularity_processor = create_electronics_variant({
     name = "singularity-processor",
 })
 
+-- Quantum Processor
+local quantum_processor = create_electronics_variant({
+    name = "quantum-processor",
+})
+
 data:extend({
     hyperlogic_unit,
-    singularity_processor
+    singularity_processor,
+    quantum_processor
 })
