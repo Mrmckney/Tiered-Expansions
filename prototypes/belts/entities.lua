@@ -1,9 +1,16 @@
 -- prototypes/belts/entities.lua
+require("util/utilities")
 
 local belt_base = data.raw["transport-belt"]["transport-belt"]
 if not belt_base then
     error("Base transport-belt not found!")
 end
+
+local belt_speeds = {
+    ["hyper-transport-belt"] = has_space_age and 0.15625 or 0.125,
+    ["ultimate-transport-belt"] = has_space_age and 0.1875 or 0.15625,
+    ["quantum-transport-belt"] = has_space_age and 0.21875 or 0.1875
+}
 
 -- function to create graphics set for transport belts
 function make_animation_set(icon)
@@ -20,7 +27,7 @@ function make_animation_set(icon)
 end
 
 -- Function to create a transport belt entity
-function create_transport_belt_entity(name, speed, energy_usage, max_health, icon_suffix)
+function create_transport_belt_entity(name, energy_usage, max_health, icon_suffix)
     local belt = table.deepcopy(belt_base)
     belt.name = name
     belt.minable = {
@@ -28,7 +35,7 @@ function create_transport_belt_entity(name, speed, energy_usage, max_health, ico
         result = name
     }
     belt.max_health = max_health
-    belt.speed = speed
+    belt.speed = belt_speeds[name]
     belt.energy_per_movement = energy_usage
 
     belt.belt_animation_set = make_animation_set(name)
@@ -37,8 +44,10 @@ function create_transport_belt_entity(name, speed, energy_usage, max_health, ico
 end
 
 local transport_belts = {
-    create_transport_belt_entity("hyper-transport-belt", 0.125, "50kW", 500),
-    create_transport_belt_entity("turbo-transport-belt", 0.15625, "40kW", 400),
-    create_transport_belt_entity("quantum-transport-belt", 0.1875, "30kW", 300)
+    create_transport_belt_entity("hyper-transport-belt", "50kW", 180),
+    create_transport_belt_entity("ultimate-transport-belt", "40kW", 190),
+    create_transport_belt_entity("quantum-transport-belt", "30kW", 200)
 }
+
+
 data:extend(transport_belts)

@@ -1,5 +1,11 @@
 -- util/utilities.lua
 
+-- Check for Space Age DLC
+has_space_age = false
+if mods and mods["space-age"] then
+  has_space_age = true
+end
+
 function make_rotated_animation_variations_from_sheet(variation_count, sheet) --makes remnants work with more than 1 variation
   local result = {}
 
@@ -34,5 +40,6 @@ function make_rotated_animation_variations_from_sheet(variation_count, sheet) --
 end
 
 return {
-  make_rotated_animation_variations_from_sheet = make_rotated_animation_variations_from_sheet
+  make_rotated_animation_variations_from_sheet = make_rotated_animation_variations_from_sheet,
+  has_space_age = has_space_age
 }

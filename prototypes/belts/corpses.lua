@@ -2,13 +2,13 @@
 require("util/utilities")
 
 -- Function to create remnants for belts
-function create_belt_remnants(name)
+function create_belt_remnants(name, alt_name)
     return {
         type = "corpse",
         name = name .. "-remnants",
         icons = {
             {
-                icon = "__TieredExpansions__/graphics/icons/belts/" .. name .. "-recipe.png",
+                icon = "__TieredExpansions__/graphics/icons/belts/" .. (alt_name or name) .. "-recipe.png",
                 icon_size = 64,
                 icon_mipmaps = 1
             }
@@ -34,7 +34,7 @@ function create_belt_remnants(name)
 end
 
 local hyper_transport_belt_remnants = create_belt_remnants("hyper-transport-belt")
-local turbo_transport_belt_remnants = create_belt_remnants("turbo-transport-belt")
+local turbo_transport_belt_remnants = create_belt_remnants("turbo-transport-belt", "ultimate-transport-belt")
 local quantum_transport_belt_remnants = create_belt_remnants("quantum-transport-belt")
 
 data:extend({

@@ -22,7 +22,7 @@ end
 
 local transport_belts_items = {
     create_transport_belt_item("hyper-transport-belt", "-recipe", "d"),
-    create_transport_belt_item("turbo-transport-belt", "-recipe", "e"),
+    create_transport_belt_item("ultimate-transport-belt", "-recipe", "e"),
     create_transport_belt_item("quantum-transport-belt", "-recipe", "f")
 }
 
