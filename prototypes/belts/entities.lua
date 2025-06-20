@@ -27,7 +27,7 @@ function make_animation_set(icon)
 end
 
 -- Function to create a transport belt entity
-function create_transport_belt_entity(name, energy_usage, max_health, icon_suffix)
+function create_transport_belt_entity(name, max_health)
     local belt = table.deepcopy(belt_base)
     belt.name = name
     belt.minable = {
@@ -36,7 +36,6 @@ function create_transport_belt_entity(name, energy_usage, max_health, icon_suffi
     }
     belt.max_health = max_health
     belt.speed = belt_speeds[name]
-    belt.energy_per_movement = energy_usage
 
     belt.belt_animation_set = make_animation_set(name)
 
@@ -44,9 +43,9 @@ function create_transport_belt_entity(name, energy_usage, max_health, icon_suffi
 end
 
 local transport_belts = {
-    create_transport_belt_entity("hyper-transport-belt", "50kW", 180),
-    create_transport_belt_entity("ultimate-transport-belt", "40kW", 190),
-    create_transport_belt_entity("quantum-transport-belt", "30kW", 200)
+    create_transport_belt_entity("hyper-transport-belt", 180),
+    create_transport_belt_entity("ultimate-transport-belt", 190),
+    create_transport_belt_entity("quantum-transport-belt", 200)
 }
 
 
