@@ -21,7 +21,7 @@ local splitter_ingredients = {
         { type = "item", name = "advanced-circuit", amount = 5 },
         { type = "item", name = "iron-gear-wheel", amount = 15 }
     },
-    ["turbo-splitter"] = {
+    ["ultimate-splitter"] = {
         { type = "item", name = "steel-plate", amount = 15 },
         { type = "item", name = "processing-unit", amount = 10 },
         { type = "item", name = "iron-gear-wheel", amount = 20 }

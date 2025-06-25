@@ -32,8 +32,8 @@ local singularity_processor_ingredients = {
     {type = "fluid", name = "sulfuric-acid", amount = 20}
 }
 
--- Ingredients for Quantum Processor
-local quantum_processor_ingredients = {
+-- Ingredients for Photon Processor
+local photon_processor_ingredients = {
     {type = "item", name = "singularity-processor", amount = 1},
     {type = "item", name = "processing-unit", amount = 20},
     {type = "item", name = "low-density-structure", amount = 10},
@@ -45,7 +45,7 @@ local quantum_processor_ingredients = {
 local electronics_recipes = {
     create_electronics_recipe("hyperlogic-unit", hyperlogic_unit_ingredients, 10),              -- Hyperlogic Unit recipe
     create_electronics_recipe("singularity-processor", singularity_processor_ingredients, 20),  -- Singularity Processor recipe
-    create_electronics_recipe("quantum-processor", quantum_processor_ingredients, 30)           -- Quantum Processor recipe
+    create_electronics_recipe("photon-processor", photon_processor_ingredients, 30)             -- Photon Processor recipe
 }
 
 data:extend(electronics_recipes)

@@ -11,7 +11,7 @@ local splitter_path = "__TieredExpansions__/graphics/entity/splitters/"
 
 local splitter_speeds = {
     ["hyper-splitter"] = has_space_age and 0.15625 or 0.125,
-    ["turbo-splitter"] = has_space_age and 0.1875 or 0.15625,
+    ["ultimate-splitter"] = has_space_age and 0.1875 or 0.15625,
     ["quantum-splitter"] = has_space_age and 0.21875 or 0.1875
 }
 
@@ -118,7 +118,7 @@ end
 -- Define and register new splitters
 local splitters = {
     create_splitter_entity("hyper-splitter", 180, "hyper-transport-belt"),
-    create_splitter_entity("turbo-splitter", 190, "ultimate-transport-belt"),
+    create_splitter_entity("ultimate-splitter", 190, "ultimate-transport-belt"),
     create_splitter_entity("quantum-splitter", 200, "quantum-transport-belt")
 }
 

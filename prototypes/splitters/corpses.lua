@@ -34,11 +34,11 @@ function create_splitter_corpse(name, icon, max_health)
 end
 
 local hyper_splitter_remnants = create_splitter_corpse("hyper-splitter")
-local turbo_splitter_remnants = create_splitter_corpse("turbo-splitter")
+local ultimate_splitter_remnants = create_splitter_corpse("ultimate-splitter")
 local quantum_splitter_remnants = create_splitter_corpse("quantum-splitter")
 
 data:extend({
     hyper_splitter_remnants,
-    turbo_splitter_remnants,
+    ultimate_splitter_remnants,
     quantum_splitter_remnants
 })

@@ -1,4 +1,5 @@
 -- prototypes/belts/items.lua
+require("util/utilities")
 
 -- Function to create a transport belt item
 function create_transport_belt_item(name, icon_suffix, order_suffix)
@@ -20,10 +21,21 @@ function create_transport_belt_item(name, icon_suffix, order_suffix)
     }
 end
 
-local transport_belts_items = {
-    create_transport_belt_item("hyper-transport-belt", "-recipe", "d"),
-    create_transport_belt_item("ultimate-transport-belt", "-recipe", "e"),
-    create_transport_belt_item("quantum-transport-belt", "-recipe", "f")
-}
+local transport_belts_items
+
+if has_space_age then
+    transport_belts_items = {
+        create_transport_belt_item("hyper-transport-belt", "-recipe", "e"),
+        create_transport_belt_item("ultimate-transport-belt", "-recipe", "f"),
+        create_transport_belt_item("quantum-transport-belt", "-recipe", "g")
+    }
+else
+    transport_belts_items = {
+        create_transport_belt_item("hyper-transport-belt", "-recipe", "d"),
+        create_transport_belt_item("ultimate-transport-belt", "-recipe", "e"),
+        create_transport_belt_item("quantum-transport-belt", "-recipe", "f")
+    }
+end
+
 
 data:extend(transport_belts_items)

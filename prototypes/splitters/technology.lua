@@ -38,7 +38,7 @@ local splitter_technologies = {
         "hyper-splitter"
     ),
     create_splitter_technology(
-        "turbo-splitter",
+        "ultimate-splitter",
         {"hyper-splitter"},
         200,
         45,
@@ -49,11 +49,11 @@ local splitter_technologies = {
             {"production-science-pack", 1},
             {"utility-science-pack", 1}
         },
-        "turbo-splitter"
+        "ultimate-splitter"
     ),
     create_splitter_technology(
         "quantum-splitter",
-        {"turbo-splitter", "space-science-pack"},
+        {"ultimate-splitter", "space-science-pack"},
         300,
         60,
         {

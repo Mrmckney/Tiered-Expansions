@@ -70,9 +70,9 @@ local singularity_processor_technology = create_electronics_technology{
     icon_mipmaps = 1
 }
 
--- Quantum Processor Technology
-local quantum_processor_technology = create_electronics_technology{ 
-    name = "quantum-processor",
+-- Photon Processor Technology
+local photon_processor_technology = create_electronics_technology{ 
+    name = "photon-processor",
     prerequisites = {
         "singularity-processor",
         "space-science-pack",
@@ -90,7 +90,7 @@ local quantum_processor_technology = create_electronics_technology{
     },
     time = 60,
     order = "c-b-q",
-    icon = "__TieredExpansions__/graphics/technology/electronics/quantum-processor-technology.png",
+    icon = "__TieredExpansions__/graphics/technology/electronics/photon-processor-technology.png",
     icon_size = 256,
     icon_mipmaps = 1
 }
@@ -98,5 +98,5 @@ local quantum_processor_technology = create_electronics_technology{
 data:extend({
     hyperlogic_unit_technology,
     singularity_processor_technology,
-    quantum_processor_technology
+    photon_processor_technology
 })

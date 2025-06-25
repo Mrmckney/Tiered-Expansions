@@ -20,7 +20,7 @@ end
 -- Icons
 local hyperlogic_unit_icon = "__TieredExpansions__/graphics/icons/electronics/hyperlogic-unit.png"
 local singularity_processor_icon = "__TieredExpansions__/graphics/icons/electronics/singularity-processor.png"
-local quantum_processor_icon = "__TieredExpansions__/graphics/icons/electronics/quantum-processor.png"
+local photon_processor_icon = "__TieredExpansions__/graphics/icons/electronics/photon-processor.png"
 
 -- Hyperlogic Unit
 local hyperlogic_unit_item = make_electronics_item("hyperlogic-unit", hyperlogic_unit_icon, "a")
@@ -28,11 +28,11 @@ local hyperlogic_unit_item = make_electronics_item("hyperlogic-unit", hyperlogic
 -- Singularity Processor
 local singularity_processor_item = make_electronics_item("singularity-processor", singularity_processor_icon, "b")
 
--- Quantum Processor
-local quantum_processor_item = make_electronics_item("quantum-processor", quantum_processor_icon, "c")
+-- Photon Processor
+local photon_processor_item = make_electronics_item("photon-processor", photon_processor_icon, "c")
 
 data:extend({
     hyperlogic_unit_item,
     singularity_processor_item,
-    quantum_processor_item
+    photon_processor_item
 })
